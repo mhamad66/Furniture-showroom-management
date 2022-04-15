@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Warehouse;
 use Illuminate\Http\Request;
+use App\Models\Showroom;
 
-class WarehouseController extends Controller
+class ShowroomController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class WarehouseController extends Controller
      */
     public function index()
     {
-        return Warehouse::all();
+        return Showroom::all();
     }
 
     /**
@@ -24,36 +24,36 @@ class WarehouseController extends Controller
      */
     public function create()
     {
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        return Warehouse::create($request->all());
-
+        return Showroom::create($request->all());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        return Warehouse::find($id);
+        return Showroom::find($id);
 
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -64,24 +64,25 @@ class WarehouseController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $Warehouse = Warehouse::findOrFail($id);
-        $Warehouse->update($request->all());
+        $Showroom = Showroom::findOrFail($id);
+        $Showroom->update($request->all());
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        return Warehouse::find($id)->delete();
+        return Showroom::find($id)->delete();
+
     }
 }

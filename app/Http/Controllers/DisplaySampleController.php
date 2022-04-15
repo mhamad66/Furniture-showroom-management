@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Warehouse;
 use Illuminate\Http\Request;
-
-class WarehouseController extends Controller
+use App\Models\DisplaySample;
+class DisplaySampleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,8 @@ class WarehouseController extends Controller
      */
     public function index()
     {
-        return Warehouse::all();
+        return DisplaySample::all();
+
     }
 
     /**
@@ -24,6 +24,7 @@ class WarehouseController extends Controller
      */
     public function create()
     {
+        //
     }
 
     /**
@@ -34,7 +35,7 @@ class WarehouseController extends Controller
      */
     public function store(Request $request)
     {
-        return Warehouse::create($request->all());
+        return DisplaySample::create($request->all());
 
     }
 
@@ -46,8 +47,7 @@ class WarehouseController extends Controller
      */
     public function show($id)
     {
-        return Warehouse::find($id);
-
+        //
     }
 
     /**
@@ -70,8 +70,8 @@ class WarehouseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $Warehouse = Warehouse::findOrFail($id);
-        $Warehouse->update($request->all());
+        $DisplaySample = DisplaySample::findOrFail($id);
+        $DisplaySample->update($request->all());
     }
 
     /**
@@ -82,6 +82,6 @@ class WarehouseController extends Controller
      */
     public function destroy($id)
     {
-        return Warehouse::find($id)->delete();
+        return DisplaySample::find($id)->delete();
     }
 }
